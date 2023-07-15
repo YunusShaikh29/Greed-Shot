@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    /*
+    ff-primary, ff-serif, fw-n, fw-m, fw-b, fs-1, fs-2, fs-h1(h1 tag), fs-p(p tag).
+    */
+    --ff-primary: 'Poppins', sans-serif;
+
+    --clr-primary-100: white;
+
+    --clr-accent-500: red;
+    --clr-accent-200: green;
+
+    --fw-s: 300;
+    --fw-n: 400;
+    --fw-m: 600;
+    --fw-b: 800;
+
+    --border-rad1: 10px;
+
+    --border1: 2px solid rgba(0, 0, 0, 0.082);
+
+    --transition-1: 300ms ease-in;
+
+    --shadow-1: 0 2px 8px rgba(255, 255, 255, 0.8);
+    --shadow-2: 0 1px 2px rgba(255, 255, 255, 0.2);
+
+    --linear-gradient-direction: to top right;
+    --primary-background: linear-gradient(var(--linear-gradient-direction), rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.9));
+
+    --popup-outline: 5px solid yellow;
+    /* --popup-translateY: 100px; */
+}
+
+body {
+    /* background-image: var(--primary-background); */
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/5-dots.png);
+    background-size: 100rem;
+    color: white;
+    font-family: var(--ff-primary);
+}
+
+/* Make images easier to work with (Andy bell reset) */
+/* img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+} */
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    color: inherit;
+    
+    line-height: 1;
+    padding: 1em 2em;
+    background: none;
+    cursor: pointer;
+    /* For background-color to change swiftly when focused: */
+    transition: all 0.3s;
+    font-weight: var(--fw-m);
+}
+
+.btn:focus {
+    outline: none;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+}

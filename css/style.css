@@ -1,0 +1,252 @@
+.main_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* .main_container > *:not(div) { */
+.container {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_styling {
+    padding: .7em;
+}
+
+.overall_score_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 75%;
+    width: 15%;
+    position: relative;
+}
+
+.overall_score_container_styling {
+    margin-left: 1rem;
+    border-radius: 10px;
+    font-weight: var(--fw-s);
+    transition: background-color var(--transition-1);
+}
+
+.overall_score_container_styling * {
+    font-weight: inherit;
+}
+
+.player_score {
+    font-size: xxx-large;
+}
+
+.current_score_container {
+    height: 75%;
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.curr_score {
+    font-size: 4rem;
+}
+
+.add_curr_score {
+    width: 3rem;
+    background-color: white;
+    cursor: pointer;
+    transition: transform var(--transition-1),
+        box-shadow var(--transition-1),
+        opacity var(--transition-1);
+    box-shadow: var(--shadow-1);
+}
+
+.add_curr_score:active {
+    transform: translateY(3px);
+    box-shadow: var(--shadow-2);
+}
+
+.actions_container {
+    width: 100%;
+    padding: 2em;
+    padding-right: 0;
+
+    position: fixed;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.restart_btn {
+    margin-right: auto;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 15px;
+    transition: transform 200ms ease-in-out;
+}
+
+.restart_btn:active {
+    transform: translateY(5px);
+}
+
+.restart_btn.animateUpdown {
+    animation: restart_game 500ms ease-in-out infinite;
+}
+
+.ruler_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+}
+
+.popup {
+    height: 100px;
+    width: 100px;
+}
+
+.popup_styling {
+    border-radius: 50%;
+    text-align: center;
+    font-weight: var(--fw-b);
+    outline: 5px solid rgb(2, 195, 154);
+
+    outline-offset: -20px;
+
+    transition: transform 600ms ease-in-out,
+        outline 600ms ease-in-out;
+}
+
+.popup.translateAbove {
+    transform: translateY(-100px);
+    outline: var(--popup-outline);
+}
+
+.popup.translateBelow {
+    transform: translateY(100px);
+    outline: var(--popup-outline);
+}
+
+.popup.shakeAnimate {
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+
+.shooter_container {
+    width: 4rem;
+    height: 8rem;
+    position: relative;
+    align-self: flex-end;
+}
+
+.shooter_container_styling {
+    margin-left: 50px;
+    background-color: aliceblue;
+    cursor: pointer;
+    transition: transform var(--transition-1);
+}
+
+.shooter_container::before,
+.shooter_container::after {
+    content: '';
+    position: absolute;
+    padding: 1em;
+    width: 50%;
+    background-color: black;
+}
+
+.shooter_container::after {
+    bottom: 0;
+}
+
+.shooter_container:active {
+    transform: translateX(12px);
+}
+
+.laser {
+    position: absolute;
+    right: 4rem;
+
+    width: 0px;
+    height: 4px;
+
+    background-color: aqua;
+    transition: width 600ms ease;
+}
+
+.warning {
+    color: red;
+}
+
+.player--active {
+    background-color: grey;
+    background-image: linear-gradient(var(--linear-gradient-direction), rgb(29 255 207), #515151);
+}
+
+.player--active * {
+    font-weight: var(--fw-m);
+}
+
+/* JS related classes: */
+
+.isDisabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.winner {
+    background-color: greenyellow;
+    background-image: linear-gradient(to bottom left, green, greenyellow);
+    transform: scale(1.06);
+}
+
+.loser {
+    background-color: tomato;
+    background-image: linear-gradient(to bottom left, red, rgb(245, 168, 154));
+    opacity: .5;
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+    }
+
+    25% {
+        margin-left: 0.5rem;
+    }
+
+    75% {
+        margin-left: -0.5rem;
+    }
+
+    100% {
+        margin-left: 0rem;
+    }
+}
+
+@keyframes restart_game {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(2px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+
+    75% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

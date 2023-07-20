@@ -77,7 +77,7 @@ const init = function () {
     shooterEl.classList.remove('isDisabled');
     firstPlayerEl.classList.remove('winner', 'loser');
     secondPlayerEl.classList.remove('loser', 'winner');
-    restartBtnEl.classList.remove('animateUpDown');
+    restartBtnEl.classList.remove('animateUpdown');
 }
 
 

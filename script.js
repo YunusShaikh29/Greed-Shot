@@ -118,7 +118,7 @@ const handleGameWin = () => {
     shooterEl.classList.add('isDisabled')
     document.getElementById(`player--${activePlayer}`).classList.add('winner');
     document.getElementById(`player--${activePlayer === 0 ? 1 : 0}`).classList.add('loser');
-    restartBtnEl.classList.add('animateUpDown');
+    restartBtnEl.classList.add('animateUpdown');
 }
 
 
